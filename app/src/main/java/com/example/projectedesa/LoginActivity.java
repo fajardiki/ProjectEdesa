@@ -81,15 +81,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
-        Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
-            if (bundle.getString("some") != null) {
-                Toast.makeText(getApplicationContext(),
-                        "data: " + bundle.getString("some"),
-                        Toast.LENGTH_SHORT).show();
-            }
-        }
     }
 
 
