@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Successfully Logged in",
                                 Toast.LENGTH_LONG).show();
 
-                        Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+                        Intent intent=new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
                     }else{
@@ -77,7 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         pref = getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
         String session_id =  pref.getString("session",null);
         if(session_id!=null){
-            Intent intent=new Intent(LoginActivity.this,HomeActivity.class);
+            Intent intent=new Intent(LoginActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }
