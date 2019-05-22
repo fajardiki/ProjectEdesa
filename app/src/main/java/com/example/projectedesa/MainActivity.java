@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_pengajuan) {
             fragment = new PengajuanFragment();
         } else if (id == R.id.nav_pengaturan) {
-
+            fragment = new PengaturanFragment();
         } else if (id == R.id.nav_logout) {
 
         }
@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity
 
             ft.commit();
         }
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
