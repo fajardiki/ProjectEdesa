@@ -6,11 +6,11 @@ public class konfigurasi {
     //Pada tutorial Kali ini, karena kita membuat localhost maka alamatnya tertuju ke IP komputer
     //dimana File PHP tersebut berada
     //PENTING! JANGAN LUPA GANTI IP SESUAI DENGAN IP KOMPUTER DIMANA DATA PHP BERADA
-    public static final String URL_ADD="http://10.10.3.168/Android/pegawai/tambahPgw.php";
-    public static final String URL_GET_ALL = "http://10.10.3.168/Android/pegawai/tampilSemuaPgw.php";
-    public static final String URL_GET_EMP = "http://10.10.3.168/Android/pegawai/tampilPgw.php?id=";
-    public static final String URL_UPDATE_EMP = "http://10.10.3.168/Android/pegawai/updatePgw.php";
-    public static final String URL_DELETE_EMP = "http://10.10.3.168/Android/pegawai/hapusPgw.php?id=";
+    public static final String URL_ADD="http://192.168.100.20/Android/pegawai/tambahPgw.php";
+    public static final String URL_GET_ALL = "http://192.168.100.20/Android/pegawai/tampilSemuaPgw.php";
+    public static final String URL_GET_EMP = "http://192.168.100.20/Android/pegawai/tampilPgw.php?id=";
+    public static final String URL_UPDATE_EMP = "http://192.168.100.20/Android/pegawai/updatePgw.php";
+    public static final String URL_DELETE_EMP = "http://192.168.100.20/Android/pegawai/hapusPgw.php?id=";
 
     //Dibawah ini merupakan Kunci yang akan digunakan untuk mengirim permintaan ke Skrip PHP
     public static final String KEY_EMP_ID = "id";
