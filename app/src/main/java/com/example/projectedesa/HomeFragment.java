@@ -9,12 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -46,7 +41,7 @@ public class HomeFragment extends Fragment {
         getJSON();
     }
 
-    private void showEmployee(){
+    private void showPengumuman(){
         JSONObject jsonObject = null;
         ArrayList<HashMap<String,String>> list = new ArrayList<HashMap<String, String>>();
         try {
@@ -55,13 +50,15 @@ public class HomeFragment extends Fragment {
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
-                String id = jo.getString(konfigurasi.TAG_ID);
-                String name = jo.getString(konfigurasi.TAG_NAMA);
+                String judul = jo.getString(konfigurasi.TAG_JUDUL_PENGUMUMAN);
+                String waktu = jo.getString(konfigurasi.TAG_WAKTU_PENGUMUMAN);
+                String isi = jo.getString(konfigurasi.TAG_ISI_PENGUMUMAN);
 
-                HashMap<String,String> employees = new HashMap<>();
-                employees.put(konfigurasi.TAG_ID,id);
-                employees.put(konfigurasi.TAG_NAMA,name);
-                list.add(employees);
+                HashMap<String,String> pengumuman = new HashMap<>();
+                pengumuman.put(konfigurasi.TAG_JUDUL_PENGUMUMAN,judul);
+                pengumuman.put(konfigurasi.TAG_WAKTU_PENGUMUMAN,waktu);
+                pengumuman.put(konfigurasi.TAG_ISI_PENGUMUMAN,isi);
+                list.add(pengumuman);
             }
 
         } catch (JSONException e) {
@@ -70,8 +67,8 @@ public class HomeFragment extends Fragment {
 
         ListAdapter adapter = new SimpleAdapter(
                 getActivity(), list, R.layout.list_item,
-                new String[]{konfigurasi.TAG_ID,konfigurasi.TAG_NAMA},
-                new int[]{R.id.id, R.id.name});
+                new String[]{konfigurasi.TAG_JUDUL_PENGUMUMAN,konfigurasi.TAG_WAKTU_PENGUMUMAN,konfigurasi.TAG_ISI_PENGUMUMAN},
+                new int[]{R.id.judul, R.id.waktu, R.id.isi});
 
         listView.setAdapter(adapter);
     }
@@ -91,13 +88,13 @@ public class HomeFragment extends Fragment {
                 super.onPostExecute(s);
                 loading.dismiss();
                 JSON_STRING = s;
-                showEmployee();
+                showPengumuman();
             }
 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(konfigurasi.URL_GET_ALL);
+                String s = rh.sendGetRequest(konfigurasi.URL_PENGUMUMAN_ALL);
                 return s;
             }
         }

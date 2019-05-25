@@ -29,4 +29,15 @@ public class konfigurasi {
     //emp itu singkatan dari Employee
     public static final String EMP_ID = "emp_id";
 
+    // URL DATABASE R DESA
+    public static final String URL_PENGUMUMAN_ALL = "http://192.168.100.20/GitHub/ProjectWebService/api/C_pengumuman";
+
+    // JSON TAGS E DESA
+    public static final String TAG_ID_PENGUMUMAN = "id_pengumuman";
+    public static final String TAG_JUDUL_PENGUMUMAN = "judul_pengumuman";
+    public static final String TAG_ISI_PENGUMUMAN = "isi_pengumuman";
+    public static final String TAG_GAMBAR_PENGUMUMAN = "gambar_pengumuman";
+    public static final String TAG_WAKTU_PENGUMUMAN = "waktu_pengumuman";
+
+
 }
