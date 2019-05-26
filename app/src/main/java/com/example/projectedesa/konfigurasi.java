@@ -31,13 +31,21 @@ public class konfigurasi {
 
     // URL DATABASE R DESA
     public static final String URL_PENGUMUMAN_ALL = "http://192.168.100.20/GitHub/ProjectWebService/api/C_pengumuman";
+    public static final String URL_PERMOHONAN_ONE = "http://192.168.100.20/GitHub/ProjectWebService/api/c_permohonan";
 
-    // JSON TAGS E DESA
+    // JSON TAGS PENGUMUMAN
     public static final String TAG_ID_PENGUMUMAN = "id_pengumuman";
     public static final String TAG_JUDUL_PENGUMUMAN = "judul_pengumuman";
     public static final String TAG_ISI_PENGUMUMAN = "isi_pengumuman";
     public static final String TAG_GAMBAR_PENGUMUMAN = "gambar_pengumuman";
     public static final String TAG_WAKTU_PENGUMUMAN = "waktu_pengumuman";
+
+    // JSON TAGS PENGAJUAN
+    public static final String TAG_NIK_PENGAJUAN = "nik";
+    public static final String TAG_NAMA_PENGAJUAN = "nama";
+    public static final String TAG_NAMASURAT_PENGAJUAN = "nama_surat";
+    public static final String TAG_TANGGAL_PENGAJUAN = "tanggal_pengajuan";
+    public static final String TAG_STATUS_PENGAJUAN = "status_pengajuan";
 
 
 }
