@@ -5,11 +5,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".PengajuanForm">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pengajuan form"/>
+        android:text="Pengajuan form"
+        android:layout_gravity="center_horizontal"
+        android:textSize="25dp"
+        android:layout_margin="10dp"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nmam"
+        android:layout_gravity="center_horizontal"/>
+
+
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nmam"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nmam"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nmam"
+        android:layout_gravity="center_horizontal"/>
+
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:hint="Nmam"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:layout_margin="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Kirim Permhonan"/>
 
 </LinearLayout>
