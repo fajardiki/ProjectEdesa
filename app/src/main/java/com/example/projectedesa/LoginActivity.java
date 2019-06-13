@@ -1,110 +1,78 @@
 package com.example.projectedesa;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class LoginActivity extends AppCompatActivity {
-    Cursor cursor;
-    EditText username, password;
-    TextInputLayout txtUsername, txtPassword;
-    Button buttonLogin;
-    SharedPreferences pref,sharedpreferences;
-    DataHelper dataHelper;
-    TextView txtRegister;
+
+    Button btn_login;
+    EditText et_username, et_password;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        dataHelper = new DataHelper(this);
-        username = (EditText) findViewById(R.id.username);
-        password = (EditText) findViewById(R.id.password);
-        txtUsername = (TextInputLayout) findViewById(R.id.txtUsername);
-        txtPassword = (TextInputLayout) findViewById(R.id.txtPassword);
-        buttonLogin = (Button) findViewById(R.id.buttonLogin);
-        txtRegister = (TextView) findViewById(R.id.txtRegister);
+        btn_login = findViewById(R.id.btn_login);
+        et_username = findViewById(R.id.et_username);
+        et_password = findViewById(R.id.et_password);
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+        btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (validate()) {
-                    String Username = username.getText().toString();
-                    String Password = password.getText().toString();
+                login();
+            }
+        });
 
-                    SQLiteDatabase db = dataHelper.getReadableDatabase();
-                    cursor = db.rawQuery("SELECT id FROM users WHERE username = '" + Username + "' AND password ='"+Password+"'",null);
-                    cursor.moveToFirst();
-                    if (cursor.getCount()>0) {
-                        sharedpreferences = getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
-                        SharedPreferences.Editor editor = sharedpreferences.edit();
-                        editor.putString("session", cursor.getString(0).toString());
-                        editor.commit();
 
-                        Toast.makeText(getApplicationContext(), "Successfully Logged in",
-                                Toast.LENGTH_LONG).show();
+    }
 
-                        Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }else{
-                        Toast.makeText(getApplicationContext(), "Failed to log in , please try again",
-                                Toast.LENGTH_LONG).show();
+    public void login() {
+        StringRequest request = new StringRequest(Request.Method.POST, "http://192.168.1.47/GitHub/ProjectWebService/api/c_login", new
+                Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        Toast.makeText(getApplicationContext(),"Wrong username or password", Toast.LENGTH_SHORT).show();
+
+//                        if (response.contains("1")) {
+//                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+//                        } else {
+//                            Toast.makeText(getApplicationContext(),"Wrong username or password", Toast.LENGTH_SHORT).show();
+//                        }
+
                     }
-                }
-            }
-        });
-
-        txtRegister.setOnClickListener(new View.OnClickListener() {
+                }, new Response.ErrorListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
+            public void onErrorResponse(VolleyError error) {
+
             }
-        });
+        }){
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("username", et_username.getText().toString());
+                params.put("password", et_password.getText().toString());
+                return params;
+            }
+        };
 
-        pref = getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
-        String session_id =  pref.getString("session",null);
-        if(session_id!=null){
-            Intent intent=new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
+        Volley.newRequestQueue(this).add(request);
+
     }
 
-
-    public boolean validate() {
-        boolean valid = false;
-        String Username = username.getText().toString();
-        String Password = password.getText().toString();
-        if(Username.isEmpty()) {
-            valid = false;
-            txtUsername.setError("Please enter valid Username!");
-        }else {
-            valid = true;
-            txtUsername.setError(null);
-        }
-
-        if (Password.isEmpty()) {
-            valid = false;
-            txtPassword.setError("Please enter valid Password!");
-        } else if (Password.length() < 4) {
-            valid = false;
-            txtPassword.setError("Password is to short!");
-        } else {
-            valid = true;
-        }
-        return valid;
-    }
 }
