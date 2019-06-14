@@ -23,6 +23,7 @@
         app:srcCompat="@drawable/photoprofil" />
 
     <TextView
+        android:id="@+id/nama"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -34,7 +35,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/nav_header_subtitle"
