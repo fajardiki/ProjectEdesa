@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -22,11 +21,25 @@ public class MainActivity extends AppCompatActivity
 
     private SharedPreferences pref;
     private TextView mnama, musername;
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sessionManager = new SessionManager(this);
+        sessionManager.checkLogin();
+//
+//        mnama = findViewById(R.id.nama);
+//        musername= findViewById(R.id.username);
+//
+//        HashMap<String, String> user = sessionManager.getUserDetail();
+//        String mName = user.get(sessionManager.NAMA);
+//        String mUsername = user.get(sessionManager.USERNAME);
+//
+//        mnama.setText(mName);
+//        musername.setText(mUsername);
 
         Fragment fragment = null;
         fragment = new HomeFragment();
@@ -96,12 +109,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_pengaturan) {
             fragment = new PengaturanFragment();
         } else if (id == R.id.nav_logout) {
-            nav_logout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    finish();
-                }
-            });
+            sessionManager.logout();
         }
 
         if (fragment != null) {

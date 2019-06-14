@@ -31,11 +31,14 @@ public class LoginActivity extends AppCompatActivity {
     private ProgressBar loading;
 //    192.168.100.14
     private static String URL_LOGIN = "http://192.168.100.14/GitHub/ProjectWebService/api/c_login";
+    SessionManager sessionManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        sessionManager = new SessionManager(this);
 
         loading = findViewById(R.id.loading);
         username = findViewById(R.id.username);
@@ -78,6 +81,8 @@ public class LoginActivity extends AppCompatActivity {
 
                             String nama = object.getString("nama").trim();
                             String username = object.getString("username").trim();
+
+                            sessionManager.createSession(nama, username);
 
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class );
                             intent.putExtra("nama", nama);
