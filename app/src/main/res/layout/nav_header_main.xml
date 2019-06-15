@@ -20,7 +20,7 @@
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/Situbondo" />
+        app:srcCompat="@drawable/situbondo" />
 
     <TextView
         android:id="@+id/nama"
