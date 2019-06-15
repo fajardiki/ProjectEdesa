@@ -1,19 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fragment Informasi"/>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <!--<ListView-->
-        <!--android:id="@+id/informasi"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="Fragment Informasi">-->
-    <!--</ListView>-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:background="#F3D9B8"
+                    android:padding="30dp"
+                    android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PROFIL DESA"
+                    android:textStyle="bold"
+                    android:textSize="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:background="#8FBC8F"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sejarah Desa"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:background="#A9A9A9"/>
+
+                        <TextView
+                            android:id="@+id/text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="5dp"
+                            android:text="
+                Tribungan atau biasa disebut Trebungan berasal dari kata dalam Bahasa Madura yaitu Tribung yang artinya pohon siwalan. Mungkin dahulunya daerah ini banyak terdapat pohon siwalan sehingga orang-orang menyebut Trebungan.
+                Masyarakat di Desa Trebungan sebagian besar bekerja sebagai petani, buruh tani dan pedagang."
+                            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lokasi Desa"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:background="#A9A9A9"/>
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="
+                Trebungan adalah desa yang terletak di Kecamatan Mlandingan Ujung Timur. Desa Trebungan berbatasan dengan desa lain diantaranya :
+                Sebelah timur = Desa Silowogo
+                Sebelah selatan = Desa Sumber Anyar
+                Sebelah barat = Desa Meranggi dan
+                                             Desa Sumber Pinang
+                Sebelah utara = Desa Mlandingan
+                                            Wetan"
+                    android:textSize="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Struktur Organisasi Desa"
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:background="#A9A9A9"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/struktur_desa"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"/>
+
+                </LinearLayout>
+        </ScrollView>
+
+</android.support.constraint.ConstraintLayout>
