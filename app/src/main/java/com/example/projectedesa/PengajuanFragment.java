@@ -1,6 +1,8 @@
 package com.example.projectedesa;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -9,11 +11,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import android.widget.ListView;
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
 import org.json.JSONArray;
@@ -23,13 +22,15 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import java.util.HashMap;
-
 public class PengajuanFragment extends Fragment implements View.OnClickListener {
 
     private ListView listView;
 
     private String JSON_STRING;
+    String mName;
+    String mUsername;
+
+    SessionManager sessionManager;
 
     @Nullable
     @Override
@@ -40,6 +41,13 @@ public class PengajuanFragment extends Fragment implements View.OnClickListener 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        sessionManager = new SessionManager(getActivity());
+        sessionManager.checkLogin();
+
+        HashMap<String, String> user = sessionManager.getUserDetail();
+        mName = user.get(sessionManager.NAMA);
+        mUsername = user.get(sessionManager.USERNAME);
 
         listView = (ListView) getView().findViewById(R.id.listpengajuan);
         FloatingActionButton fab = (FloatingActionButton) getView().findViewById(R.id.fab);
@@ -101,7 +109,7 @@ public class PengajuanFragment extends Fragment implements View.OnClickListener 
             @Override
             protected String doInBackground(Void... params) {
                 RequestHandler rh = new RequestHandler();
-                String s = rh.sendGetRequest(konfigurasi.URL_PERMOHONAN_ONE);
+                String s = rh.sendGetRequestParam(konfigurasi.URL_PERMOHONAN_ONE, mUsername);
                 return s;
             }
         }
