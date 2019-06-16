@@ -13,6 +13,7 @@ import android.os.AsyncTask;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,8 +25,11 @@ import java.util.HashMap;
 public class HomeFragment extends Fragment {
 
     private ListView listView;
+    TextView User;
 
     private String JSON_STRING;
+
+    SessionManager sessionManager;
 
     @Nullable
     @Override
@@ -37,7 +41,19 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        sessionManager = new SessionManager(getActivity());
+        sessionManager.checkLogin();
+
         listView = (ListView) getView().findViewById(R.id.listview);
+        User = (TextView) getView().findViewById(R.id.user);
+
+        HashMap<String, String> user = sessionManager.getUserDetail();
+        String mName = user.get(sessionManager.NAMA);
+        String mUsername = user.get(sessionManager.USERNAME);
+
+
+        User.setText("Selamat datang "+mName);
+
         getJSON();
     }
 
