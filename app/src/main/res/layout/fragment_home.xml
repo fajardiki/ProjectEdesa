@@ -6,6 +6,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        r
+
         <TextView
             android:id="@+id/user"
             android:layout_width="match_parent"

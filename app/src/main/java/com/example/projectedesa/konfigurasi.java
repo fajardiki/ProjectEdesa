@@ -30,8 +30,10 @@ public class konfigurasi {
     public static final String EMP_ID = "emp_id";
 
     // URL DATABASE R DESA
-    public static final String URL_PENGUMUMAN_ALL = "http://192.168.100.5/GitHub/ProjectWebService/api/C_pengumuman";
-    public static final String URL_PERMOHONAN_ONE = "http://192.168.100.5/GitHub/ProjectWebService/api/c_permohonan/";
+    public static final String URL_PENGUMUMAN_ALL = "http://192.168.100.15/GitHub/ProjectWebService/api/C_pengumuman";
+    public static final String URL_PERMOHONAN_ONE = "http://192.168.100.15/GitHub/ProjectWebService/api/c_permohonan/";
+    public static final String URL_UPDATE_PASSWORD = "http://192.168.100.15/GitHub/ProjectWebService/api/c_updatepassword";
+
 
     // JSON TAGS PENGUMUMAN
     public static final String TAG_ID_PENGUMUMAN = "id_pengumuman";
@@ -46,6 +48,11 @@ public class konfigurasi {
     public static final String TAG_NAMASURAT_PENGAJUAN = "nama_surat";
     public static final String TAG_TANGGAL_PENGAJUAN = "tanggal_pengajuan";
     public static final String TAG_STATUS_PENGAJUAN = "status_pengajuan";
+
+    // JSON TAGS UPDATE
+    public static final String KEY_USERNAME = "username";
+    public static final String KEY_PASSWORD_OLD = "password";
+    public static final String KEY_PASSWORD_NEW = "password";
 
     //emp itu singkatan dari Employee
     public static final String ID = "id";

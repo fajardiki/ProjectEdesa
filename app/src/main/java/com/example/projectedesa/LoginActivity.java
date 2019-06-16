@@ -30,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button btn_login;
     private ProgressBar loading;
 //    192.168.100.14
-    private static String URL_LOGIN = "http://192.168.100.5/GitHub/ProjectWebService/api/c_login";
+    private static String URL_LOGIN = "http://192.168.100.15/GitHub/ProjectWebService/api/c_login";
     SessionManager sessionManager;
 
     @Override

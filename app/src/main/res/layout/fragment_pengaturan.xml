@@ -67,6 +67,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp">
                 <EditText
+                    android:id="@+id/oldpassword"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:hint="Password Lama"
@@ -80,6 +81,7 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">
                 <EditText
+                    android:id="@+id/newpassword"
                     android:layout_width="300dp"
                     android:layout_height="50dp"
                     android:hint="Password Baru"
@@ -88,6 +90,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/btnubah"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

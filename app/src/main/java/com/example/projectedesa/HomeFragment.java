@@ -66,11 +66,13 @@ public class HomeFragment extends Fragment {
 
             for(int i = 0; i<result.length(); i++){
                 JSONObject jo = result.getJSONObject(i);
+                String gambar = jo.getString(konfigurasi.TAG_GAMBAR_PENGUMUMAN);
                 String judul = jo.getString(konfigurasi.TAG_JUDUL_PENGUMUMAN);
                 String waktu = jo.getString(konfigurasi.TAG_WAKTU_PENGUMUMAN);
                 String isi = jo.getString(konfigurasi.TAG_ISI_PENGUMUMAN);
 
                 HashMap<String,String> pengumuman = new HashMap<>();
+                pengumuman.put(konfigurasi.TAG_GAMBAR_PENGUMUMAN,gambar);
                 pengumuman.put(konfigurasi.TAG_JUDUL_PENGUMUMAN,judul);
                 pengumuman.put(konfigurasi.TAG_WAKTU_PENGUMUMAN,waktu);
                 pengumuman.put(konfigurasi.TAG_ISI_PENGUMUMAN,isi);
@@ -83,8 +85,8 @@ public class HomeFragment extends Fragment {
 
         ListAdapter adapter = new SimpleAdapter(
                 getActivity(), list, R.layout.list_item,
-                new String[]{konfigurasi.TAG_JUDUL_PENGUMUMAN,konfigurasi.TAG_WAKTU_PENGUMUMAN,konfigurasi.TAG_ISI_PENGUMUMAN},
-                new int[]{R.id.judul, R.id.waktu, R.id.isi});
+                new String[]{konfigurasi.TAG_GAMBAR_PENGUMUMAN, konfigurasi.TAG_JUDUL_PENGUMUMAN,konfigurasi.TAG_WAKTU_PENGUMUMAN,konfigurasi.TAG_ISI_PENGUMUMAN},
+                new int[]{R.id.gambar,R.id.judul, R.id.waktu, R.id.isi});
 
         listView.setAdapter(adapter);
     }
