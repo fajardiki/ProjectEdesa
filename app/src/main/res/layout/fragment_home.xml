@@ -11,18 +11,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Selamat"
+            android:textSize="20dp"
             android:textAlignment="center"
-            android:background="@color/colorAccent"/>
+            android:background="#A9A9A9"/>
+
+        <ViewFlipper
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_contextvertical="true"
+            android:id="@+id/v_flipper"/>
 
         <TextView
+            android:id="@+id/pengaturan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="PENGUMUMAN"
-            android:textSize="20dp"
             android:textStyle="bold"
+            android:textSize="35dp"
+            android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:paddingBottom="10dp"
-            android:background="@color/colorAccent"/>
+            android:background="#8FBC8F"/>
 
         <ListView
             android:id="@+id/listview"

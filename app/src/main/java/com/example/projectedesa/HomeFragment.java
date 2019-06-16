@@ -14,6 +14,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,6 +27,7 @@ public class HomeFragment extends Fragment {
 
     private ListView listView;
     TextView User;
+    ViewFlipper v_flipper;
 
     private String JSON_STRING;
 
@@ -40,6 +42,9 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        int images[] = {R.drawable.agustusan, R.drawable.posyandu, R.drawable.hutdesa};
+        v_flipper = v_flipper.findViewById(R.id.v_flipper);
 
         sessionManager = new SessionManager(getActivity());
         sessionManager.checkLogin();
