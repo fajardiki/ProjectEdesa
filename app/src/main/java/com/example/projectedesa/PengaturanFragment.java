@@ -69,7 +69,7 @@ public class PengaturanFragment extends Fragment implements View.OnClickListener
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                s = "LOGIN SUKSES";
+                s = "UPDATE SUKSES";
                 loading.dismiss();
                 Toast.makeText(getActivity(),s,Toast.LENGTH_LONG).show();
             }
