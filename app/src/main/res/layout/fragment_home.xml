@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -34,27 +30,24 @@
         <LinearLayout
             android:id="@+id/pagesContainer"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"/>
-
-        <TextView
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PENGUMUMAN"
-            android:textStyle="bold"
-            android:textSize="35dp"
-            android:layout_gravity="center_horizontal"
-            android:textAlignment="center"
-            android:background="#8FBC8F"/>
+            android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PENGUMUMAN"
+                    android:textStyle="bold"
+                    android:textSize="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textAlignment="center"
+                    android:background="#8FBC8F"/>
+
+
+        </LinearLayout>
         <ListView
             android:id="@+id/listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"></ListView>
 
 </LinearLayout>
-</ScrollView>

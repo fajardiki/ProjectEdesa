@@ -28,6 +28,19 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        sessionManager = new SessionManager(this);
+        sessionManager.checkLogin();
+//
+//        mnama = findViewById(R.id.nama);
+//        musername= findViewById(R.id.username);
+//
+//        HashMap<String, String> user = sessionManager.getUserDetail();
+//        String mName = user.get(sessionManager.NAMA);
+//        String mUsername = user.get(sessionManager.USERNAME);
+//
+//        mnama.setText(mName);
+//        musername.setText(mUsername);
+
         Fragment fragment = null;
         fragment = new HomeFragment();
         //HomeFragment= fragment class to launch that

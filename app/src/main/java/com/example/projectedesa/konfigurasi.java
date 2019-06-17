@@ -30,9 +30,9 @@ public class konfigurasi {
     public static final String EMP_ID = "emp_id";
 
     // URL DATABASE R DESA
-    public static final String URL_PENGUMUMAN_ALL = "http://192.168.1.40/GitHub/ProjectWebService/api/C_pengumuman";
-    public static final String URL_PERMOHONAN_ONE = "http://192.168.1.40/GitHub/ProjectWebService/api/c_permohonan/";
-    public static final String URL_UPDATE_PASSWORD = "http://192.168.1.40/GitHub/ProjectWebService/api/c_updatepassword";
+    public static final String URL_PENGUMUMAN_ALL = "http://192.168.1.25/GitHub/ProjectWebService/api/C_pengumuman";
+    public static final String URL_PERMOHONAN_ONE = "http://192.168.1.25/GitHub/ProjectWebService/api/c_permohonan/";
+    public static final String URL_UPDATE_PASSWORD = "http://192.168.1.25/GitHub/ProjectWebService/api/c_updatepassword";
 
 
     // JSON TAGS PENGUMUMAN
