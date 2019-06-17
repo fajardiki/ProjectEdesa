@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
-        r
 
         <TextView
             android:id="@+id/user"
@@ -14,17 +17,39 @@
             android:layout_height="wrap_content"
             android:text="Selamat"
             android:textAlignment="center"
-            android:background="@color/colorAccent"/>
+            android:textSize="20dp"
+            android:background="#A9A9A9"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="150dp">
+
+                <com.example.projectedesa._sliders.SliderView
+                    android:id="@+id/sliderView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/pagesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="PENGUMUMAN"
-            android:textSize="20dp"
             android:textStyle="bold"
+            android:textSize="35dp"
+            android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:paddingBottom="10dp"
-            android:background="@color/colorAccent"/>
+            android:background="#8FBC8F"/>
 
         <ListView
             android:id="@+id/listview"
@@ -32,3 +57,4 @@
             android:layout_height="match_parent"></ListView>
 
 </LinearLayout>
+</ScrollView>

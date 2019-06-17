@@ -17,7 +17,6 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:background="#F3D9B8"
-                    android:padding="30dp"
                     android:orientation="vertical">
 
                 <TextView
@@ -47,9 +46,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="5dp"
-                            android:text="      Tribungan atau biasa disebut Trebungan berasal dari kata dalam Bahasa Madura yaitu Tribung yang artinya pohon siwalan.
-       Mungkin dahulunya daerah ini banyak terdapat pohon siwalan sehingga orang-orang menyebut Trebungan Masyarakat di Desa Trebungan sebagian besar bekerja sebagai petani, buruh tani dan pedagang."
-                            android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+                            android:textSize="20dp"
+                            android:text="      Tribungan atau biasa disebut Trebungan berasal dari kata dalam Bahasa Madura yaitu Tribung yang artinya pohon siwalan. Mungkin dahulunya daerah ini banyak terdapat pohon siwalan sehingga orang-orang menyebut Trebungan Masyarakat di Desa Trebungan sebagian besar bekerja sebagai petani, buruh tani dan pedagang." />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -66,7 +64,7 @@
                     android:id="@+id/text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="      Trebungan adalah desa yang terletak di Kecamatan Mlandingan Ujung Timur. Desa Trebungan berbatasan dengan desa lain diantaranya :Sebelah timur = Desa Silowogo Sebelah selatan = Desa Sumber Anyar Sebelah barat = Desa Meranggi dan Desa Sumber Pinang Sebelah utara = Desa Mlandingan Wetan"
+                    android:text="      Trebungan adalah desa yang terletak di Kecamatan Mlandingan Ujung Timur. Desa Trebungan terletak di sebelah timur Desa Silowogo, sebelah selatan Desa Sumber Anyar, sebelah barat adalah Desa Meranggi dan Desa Sumber Pinang, dan sebelah utara Desa Mlandingan Wetan."
                     android:textSize="20dp"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="10dp" />

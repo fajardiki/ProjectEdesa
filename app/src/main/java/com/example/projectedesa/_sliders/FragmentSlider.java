@@ -1,11 +1,11 @@
 package com.example.projectedesa._sliders;
 
-import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.support.v4.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import com.example.projectedesa.R;
@@ -22,7 +22,7 @@ public class FragmentSlider extends Fragment {
     public static android.support.v4.app.Fragment newInstance(String params) {
         FragmentSlider fragment = new FragmentSlider();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, params);
+        args.putString(ARG_PARAM1, String.valueOf(params));
         fragment.setArguments(args);
         return fragment;
     }

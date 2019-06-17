@@ -14,44 +14,34 @@
             android:id="@+id/pengaturan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pengaturan"
+            android:text="PENGATURAN"
+            android:textStyle="bold"
+            android:textSize="35dp"
+            android:layout_gravity="center_horizontal"
             android:textAlignment="center"
-            android:textSize="25sp"
-            android:background="@color/colorAccent"
-            android:textColor="#fff"
-            android:padding="10dp"/>
+            android:background="#8FBC8F"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ubah Password"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="25dp"
+                android:layout_marginTop="20dp"/>
             <ImageView
                 android:id="@+id/img_ktp"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
-                android:src="@mipmap/ic_launcher"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:src="@drawable/ubah_password"
                 android:padding="15dp"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal">
-                <Button
-                    android:id="@+id/btn_choosektp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Choose"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"/>
-
-                <Button
-                    android:id="@+id/btn_update"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Update"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"/>
-            </LinearLayout>
 
         </LinearLayout>
 
@@ -94,7 +84,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:text="Ubah Password"
+                android:text="UBAH"
+                android:textStyle="bold"
+                android:textSize="20dp"
                 android:layout_marginTop="10dp"/>
 
         </LinearLayout>

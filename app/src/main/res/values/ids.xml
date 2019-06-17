@@ -3,4 +3,6 @@
     <item name="button" type="id" />
     <item name="action_settings" type="id" />
     <item name="buttonLogout" type="id" />
+    <item name="sliderView" type="id" />
+    <item name="pagesContainer" type="id" />
 </resources>

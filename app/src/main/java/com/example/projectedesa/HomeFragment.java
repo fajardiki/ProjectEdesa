@@ -10,10 +10,16 @@ import android.view.ViewGroup;
 
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+
+import com.example.projectedesa._sliders.FragmentSlider;
+import com.example.projectedesa._sliders.SliderIndicator;
+import com.example.projectedesa._sliders.SliderPagerAdapter;
+import com.example.projectedesa._sliders.SliderView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,8 +27,15 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
+
+    private SliderPagerAdapter mAdapter;
+    private SliderIndicator mIndicator;
+
+    private SliderView sliderView;
+    private LinearLayout mLinearLayout;
 
     private ListView listView;
     TextView User;
@@ -34,7 +47,30 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, null);
+
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+        sliderView = (SliderView) rootView.findViewById(R.id.sliderView);
+        mLinearLayout = (LinearLayout) rootView.findViewById(R.id.pagesContainer);
+        setupSlider();
+
+        return rootView;
+
+    }
+
+    private void setupSlider() {
+        sliderView.setDurationScroll(800);
+        List<Fragment> fragments = new ArrayList<>();
+        fragments.add(FragmentSlider.newInstance("http://news.rakyatku.com/thumbs/img_660_442_semarakkan_14733944712403.JPG"));
+        fragments.add(FragmentSlider.newInstance("https://brigif1-tniad.mil.id/yonmek202/wp-content/uploads/2017/03/DSC_1013.jpg"));
+        fragments.add(FragmentSlider.newInstance("http://cdn2.tstatic.net/kaltim/foto/bank/images/lomba-joget-dangdut_20170820_120158.jpg"));
+
+        mAdapter = new SliderPagerAdapter(getFragmentManager(),fragments);
+
+        sliderView.setAdapter(mAdapter);
+        mIndicator = new SliderIndicator(getActivity(), mLinearLayout, sliderView, R.drawable.indicator_circle);
+        mIndicator.setPageCount(fragments.size());
+        mIndicator.show();
+
     }
 
     @Override
